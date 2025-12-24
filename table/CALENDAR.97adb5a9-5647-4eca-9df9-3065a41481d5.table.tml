@@ -1,0 +1,60 @@
+guid: 97adb5a9-5647-4eca-9df9-3065a41481d5
+table:
+  name: CALENDAR
+  db: FRANCOIS
+  schema: AIRBNB
+  db_table: CALENDAR
+  connection:
+    name: Airbnb
+    fqn: 10094842-7bbb-463b-88d8-59a5f0af0d33
+  columns:
+  - name: LISTING_ID
+    db_column_name: LISTING_ID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: DATE
+    db_column_name: DATE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: AVAILABLE
+    db_column_name: AVAILABLE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: BOOL
+  - name: PRICE
+    db_column_name: PRICE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: ADJUSTED_PRICE
+    db_column_name: ADJUSTED_PRICE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: MINIMUM_NIGHTS
+    db_column_name: MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MAXIMUM_NIGHTS
+    db_column_name: MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  properties:
+    spotter_config:
+      is_spotter_enabled: true

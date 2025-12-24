@@ -1,0 +1,526 @@
+guid: f19d134f-4e29-4c80-8890-18fd9dd55d36
+model:
+  name: Airbnb
+  description: This worksheet provides a comprehensive overview of Airbnb property listings, including details about the accommodations, host profiles, and guest reviews. It offers insights into availability, pricing, and occupancy trends, helping users understand both the features of each listing and its performance over time. The data also covers location information and booking policies, supporting informed decision-making for both hosts and guests. (AI generated)
+  model_tables:
+  - name: CALENDAR
+    fqn: 97adb5a9-5647-4eca-9df9-3065a41481d5
+  - name: LISTINGS
+    fqn: 6da8d65e-588a-4c57-a4a7-ee400269a481
+    joins:
+    - with: CALENDAR
+      'on': '[LISTINGS::ID] = [CALENDAR::LISTING_ID]'
+      type: INNER
+      cardinality: ONE_TO_MANY
+    - with: REVIEWS
+      'on': '[LISTINGS::ID] = [REVIEWS::LISTING_ID]'
+      type: INNER
+      cardinality: ONE_TO_MANY
+  - name: REVIEWS
+    fqn: 702a5cbc-506f-4a30-9cce-501c6fd71d8a
+  columns:
+  - name: AVAILABLE
+    column_id: CALENDAR::AVAILABLE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Current date availability status showing whether the property can be booked for the specific date
+  - name: CALENDAR DATE
+    column_id: CALENDAR::DATE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: Specific date reference for calendar-based availability and pricing data within the property's booking system.
+  - name: CALENDAR MAXIMUM_NIGHTS
+    column_id: CALENDAR::MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Date-specific maximum stay limit from the property's booking calendar for precise reservation planning.
+  - name: CALENDAR MINIMUM_NIGHTS
+    column_id: CALENDAR::MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Date-specific minimum stay requirement from the property's booking calendar for precise reservation planning.
+  - name: ACCOMMODATES
+    column_id: LISTINGS::ACCOMMODATES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Maximum guest capacity indicating the total number of people the property can comfortably house during a stay.
+  - name: AMENITIES
+    column_id: LISTINGS::AMENITIES
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Comprehensive list of property features and services available to enhance guest experience and comfort during their stay.
+  - name: AVAILABILITY_30
+    column_id: LISTINGS::AVAILABILITY_30
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Number of available booking days within the next 30-day period for short-term availability assessment.
+  - name: AVAILABILITY_365
+    column_id: LISTINGS::AVAILABILITY_365
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Number of available booking days within the next 365-day period for annual availability assessment.
+  - name: AVAILABILITY_60
+    column_id: LISTINGS::AVAILABILITY_60
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Number of available booking days within the next 60-day period for medium-term availability assessment.
+  - name: AVAILABILITY_90
+    column_id: LISTINGS::AVAILABILITY_90
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Number of available booking days within the next 90-day period for quarterly availability assessment.
+  - name: AVAILABILITY_EOY
+    column_id: LISTINGS::AVAILABILITY_EOY
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Number of available booking days remaining until the end of the current year for seasonal planning.
+  - name: BATHROOMS
+    column_id: LISTINGS::BATHROOMS
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Bathroom facility count indicating sanitary accommodation capacity for guest convenience and comfort assessment.
+  - name: BATHROOMS_TEXT
+    column_id: LISTINGS::BATHROOMS_TEXT
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Detailed bathroom description providing specific facility information in human-readable format for guest understanding.
+  - name: BEDROOMS
+    column_id: LISTINGS::BEDROOMS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Count of separate sleeping rooms available to guests for privacy and accommodation planning purposes.
+  - name: CALCULATED_HOST_LISTINGS_COUNT
+    column_id: LISTINGS::CALCULATED_HOST_LISTINGS_COUNT
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: System-computed total of host's active listings across all property types for accurate portfolio measurement.
+  - name: CALCULATED_HOST_LISTINGS_COUNT_ENTIRE_HOMES
+    column_id: LISTINGS::CALCULATED_HOST_LISTINGS_COUNT_ENTIRE_HOMES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: System-computed count of host's entire home listings, measuring their full-property rental portfolio segment.
+  - name: CALCULATED_HOST_LISTINGS_COUNT_PRIVATE_ROOMS
+    column_id: LISTINGS::CALCULATED_HOST_LISTINGS_COUNT_PRIVATE_ROOMS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: System-computed count of host's private room listings, measuring their shared-property rental portfolio segment.
+  - name: CALCULATED_HOST_LISTINGS_COUNT_SHARED_ROOMS
+    column_id: LISTINGS::CALCULATED_HOST_LISTINGS_COUNT_SHARED_ROOMS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: System-computed count of host's shared room listings, measuring their communal accommodation portfolio segment.
+  - name: CALENDAR_LAST_SCRAPED
+    column_id: LISTINGS::CALENDAR_LAST_SCRAPED
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: Date when property availability calendar data was most recently collected for booking information updates.
+  - name: CALENDAR_UPDATED
+    column_id: LISTINGS::CALENDAR_UPDATED
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Timestamp indicating when the host last modified their property's availability calendar for booking management.
+  - name: DESCRIPTION
+    column_id: LISTINGS::DESCRIPTION
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Comprehensive property description provided by hosts detailing amenities, features, and unique selling points for guest consideration.
+  - name: ESTIMATED_OCCUPANCY_L365D
+    column_id: LISTINGS::ESTIMATED_OCCUPANCY_L365D
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Calculated utilization rate showing percentage of days the property was booked over the last 365 days.
+  - name: FIRST_REVIEW
+    column_id: LISTINGS::FIRST_REVIEW
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: Date of the earliest guest review received, marking the property's initial booking and operational history.
+  - name: HAS_AVAILABILITY
+    column_id: LISTINGS::HAS_AVAILABILITY
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: General availability status indicating whether the property has any open dates for future bookings.
+  - name: HOST_ABOUT
+    column_id: LISTINGS::HOST_ABOUT
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Personal biography section where hosts describe themselves, their hosting philosophy, and guest interaction approach.
+  - name: HOST_ACCEPTANCE_RATE
+    column_id: LISTINGS::HOST_ACCEPTANCE_RATE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Percentage of booking requests that hosts approve, indicating selectivity and availability for guest reservations.
+  - name: HOST_HAS_PROFILE_PIC
+    column_id: LISTINGS::HOST_HAS_PROFILE_PIC
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Profile completeness indicator showing whether the host has uploaded a personal photograph for guest visibility.
+  - name: HOST_ID
+    column_id: LISTINGS::HOST_ID
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Unique identifier for property owners or managers operating rental listings on the Airbnb platform.
+  - name: HOST_IDENTITY_VERIFIED
+    column_id: LISTINGS::HOST_IDENTITY_VERIFIED
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Identity confirmation status indicating whether the host has completed Airbnb's verification process for enhanced trust.
+  - name: HOST_IS_SUPERHOST
+    column_id: LISTINGS::HOST_IS_SUPERHOST
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Elite status designation recognizing hosts who consistently deliver exceptional guest experiences and meet performance standards.
+  - name: HOST_LISTINGS_COUNT
+    column_id: LISTINGS::HOST_LISTINGS_COUNT
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Total number of active properties managed by the host, indicating their portfolio size and hosting experience level.
+  - name: HOST_LOCATION
+    column_id: LISTINGS::HOST_LOCATION
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Geographic area where the host is based, providing context for their local market knowledge and presence.
+  - name: HOST_NAME
+    column_id: LISTINGS::HOST_NAME
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Display name of the property owner or manager responsible for guest communication and property management.
+  - name: HOST_NEIGHBOURHOOD
+    column_id: LISTINGS::HOST_NEIGHBOURHOOD
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Local area where the host resides, demonstrating their familiarity with the property's surrounding community.
+  - name: HOST_PICTURE_URL
+    column_id: LISTINGS::HOST_PICTURE_URL
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Full-size host profile photograph web address providing visual representation for guest trust and connection building.
+  - name: HOST_RESPONSE_RATE
+    column_id: LISTINGS::HOST_RESPONSE_RATE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Percentage of guest inquiries that hosts respond to, measuring communication reliability and engagement levels.
+  - name: HOST_RESPONSE_TIME
+    column_id: LISTINGS::HOST_RESPONSE_TIME
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Average duration hosts take to respond to guest inquiries, indicating communication efficiency and availability.
+  - name: HOST_SINCE
+    column_id: LISTINGS::HOST_SINCE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: Registration date marking when the host first joined the Airbnb platform as a property manager.
+  - name: HOST_THUMBNAIL_URL
+    column_id: LISTINGS::HOST_THUMBNAIL_URL
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Small-format host profile image web address used for compact display contexts and quick visual identification.
+  - name: HOST_TOTAL_LISTINGS_COUNT
+    column_id: LISTINGS::HOST_TOTAL_LISTINGS_COUNT
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Complete count of all properties ever listed by the host, including inactive listings for comprehensive portfolio assessment.
+  - name: HOST_URL
+    column_id: LISTINGS::HOST_URL
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Direct web link to the host's profile page containing their background, reviews, and other managed properties.
+  - name: HOST_VERIFICATIONS
+    column_id: LISTINGS::HOST_VERIFICATIONS
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: List of identity verification methods completed by the host to establish credibility and trust with potential guests.
+  - name: ID
+    column_id: LISTINGS::ID
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Primary identifier for individual Airbnb property listings, serving as the main reference key for property records in the rental marketplace database.
+  - name: INSTANT_BOOKABLE
+    column_id: LISTINGS::INSTANT_BOOKABLE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Booking automation flag indicating whether guests can reserve the property immediately without host pre-approval.
+  - name: LAST_REVIEW
+    column_id: LISTINGS::LAST_REVIEW
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: Date of the most recent guest review received, indicating current booking activity and guest engagement.
+  - name: LAST_SCRAPED
+    column_id: LISTINGS::LAST_SCRAPED
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: Date when property listing data was most recently collected from the platform for database updates.
+  - name: LATITUDE
+    column_id: LISTINGS::LATITUDE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      geo_config:
+        latitude: true
+      ai_context: Geographic coordinate indicating the property's north-south position for precise location mapping and proximity analysis.
+  - name: LICENSE
+    column_id: LISTINGS::LICENSE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Official registration or permit number demonstrating legal compliance for short-term rental operations in the jurisdiction.
+  - name: LISTING_URL
+    column_id: LISTINGS::LISTING_URL
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Direct web address linking to the property's detailed page on the Airbnb platform for guest viewing and booking access.
+  - name: LONGITUDE
+    column_id: LISTINGS::LONGITUDE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      geo_config:
+        longitude: true
+      ai_context: Geographic coordinate indicating the property's east-west position for precise location mapping and proximity analysis.
+  - name: MAXIMUM_MAXIMUM_NIGHTS
+    column_id: LISTINGS::MAXIMUM_MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Longest maximum night limit across all calendar periods, showing the most flexible extended stay option.
+  - name: MAXIMUM_MINIMUM_NIGHTS
+    column_id: LISTINGS::MAXIMUM_MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Highest minimum night requirement across all calendar periods, showing the most restrictive booking requirement.
+  - name: MAXIMUM_NIGHTS
+    column_id: LISTINGS::MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Longest stay duration allowed for booking, establishing the host's maximum reservation policy.
+  - name: MAXIMUM_NIGHTS_AVG_NTM
+    column_id: LISTINGS::MAXIMUM_NIGHTS_AVG_NTM
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Average maximum night limit over the next twelve months, indicating typical long-term stay policies.
+  - name: MINIMUM_MAXIMUM_NIGHTS
+    column_id: LISTINGS::MINIMUM_MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Shortest maximum night limit across all calendar periods, showing the most restrictive stay duration.
+  - name: MINIMUM_MINIMUM_NIGHTS
+    column_id: LISTINGS::MINIMUM_MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Lowest minimum night requirement across all calendar periods, showing the most flexible booking option.
+  - name: MINIMUM_NIGHTS
+    column_id: LISTINGS::MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Shortest stay duration required for booking, establishing the host's minimum reservation policy.
+  - name: MINIMUM_NIGHTS_AVG_NTM
+    column_id: LISTINGS::MINIMUM_NIGHTS_AVG_NTM
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Average minimum night requirement over the next twelve months, indicating typical short-term booking policies.
+  - name: NAME
+    column_id: LISTINGS::NAME
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Property title or marketing headline displayed to potential guests, capturing the host's description of their rental offering.
+  - name: NEIGHBOURHOOD_CLEANSED
+    column_id: LISTINGS::NEIGHBOURHOOD_CLEANSED
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Standardized neighborhood classification ensuring consistent geographic categorization for analytical and comparison purposes.
+  - name: NUMBER_OF_REVIEWS
+    column_id: LISTINGS::NUMBER_OF_REVIEWS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Total count of guest reviews received for the property, indicating booking history and guest engagement levels.
+  - name: NUMBER_OF_REVIEWS_L30D
+    column_id: LISTINGS::NUMBER_OF_REVIEWS_L30D
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Count of guest reviews received in the last 30 days, measuring current property booking activity.
+  - name: NUMBER_OF_REVIEWS_LTM
+    column_id: LISTINGS::NUMBER_OF_REVIEWS_LTM
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Count of guest reviews received in the last twelve months, measuring recent property performance and activity.
+  - name: NUMBER_OF_REVIEWS_LY
+    column_id: LISTINGS::NUMBER_OF_REVIEWS_LY
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Count of guest reviews received in the previous year, enabling year-over-year performance comparison analysis.
+  - name: PICTURE_URL
+    column_id: LISTINGS::PICTURE_URL
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Primary property image web address showcasing the rental's main visual representation to attract potential guests.
+  - name: PROPERTY_TYPE
+    column_id: LISTINGS::PROPERTY_TYPE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Classification of physical property structure defining the type of accommodation being offered to guests.
+  - name: REVIEW_SCORES_ACCURACY
+    column_id: LISTINGS::REVIEW_SCORES_ACCURACY
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Guest rating measuring how well the property matched listing descriptions and expectations upon arrival.
+  - name: REVIEW_SCORES_CHECKIN
+    column_id: LISTINGS::REVIEW_SCORES_CHECKIN
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Guest rating assessing the smoothness and convenience of the property check-in process and experience.
+  - name: REVIEW_SCORES_CLEANLINESS
+    column_id: LISTINGS::REVIEW_SCORES_CLEANLINESS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Guest rating evaluating property hygiene standards and housekeeping quality during their stay.
+  - name: REVIEW_SCORES_COMMUNICATION
+    column_id: LISTINGS::REVIEW_SCORES_COMMUNICATION
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Guest rating measuring host responsiveness, clarity, and helpfulness throughout the booking and stay process.
+  - name: REVIEW_SCORES_LOCATION
+    column_id: LISTINGS::REVIEW_SCORES_LOCATION
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Guest rating evaluating the property's geographic desirability, accessibility, and neighborhood appeal.
+  - name: REVIEW_SCORES_RATING
+    column_id: LISTINGS::REVIEW_SCORES_RATING
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Overall guest satisfaction score reflecting comprehensive property experience and service quality assessment.
+  - name: REVIEW_SCORES_VALUE
+    column_id: LISTINGS::REVIEW_SCORES_VALUE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Guest rating assessing whether the property provided good value for money relative to price and experience.
+  - name: REVIEWS_PER_MONTH
+    column_id: LISTINGS::REVIEWS_PER_MONTH
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+      ai_context: Average monthly review frequency indicating consistent booking activity and guest feedback generation rate.
+  - name: ROOM_TYPE
+    column_id: LISTINGS::ROOM_TYPE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Rental arrangement category specifying guest access level and privacy expectations within the property.
+  - name: SCRAPE_ID
+    column_id: LISTINGS::SCRAPE_ID
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Unique identifier for data collection sessions, enabling tracking of when information was gathered from the platform.
+  - name: SOURCE
+    column_id: LISTINGS::SOURCE
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Data origin indicator specifying whether information came from current scraping or previous data collection efforts.
+  - name: COMMENTS
+    column_id: REVIEWS::COMMENTS
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Written guest feedback providing detailed qualitative insights about property experience and stay satisfaction.
+  - name: DATE
+    column_id: REVIEWS::DATE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+      ai_context: General date field for temporal analysis and time-based data organization across various property metrics.
+  - name: REVIIEWS ID
+    column_id: REVIEWS::ID
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Unique identifier for individual review entries, enabling specific feedback tracking and reference management.
+  - name: LISTING_ID
+    column_id: REVIEWS::LISTING_ID
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Secondary listing reference number used for cross-referencing property records across different data sources and system integrations.
+  - name: REVIEWER_ID
+    column_id: REVIEWS::REVIEWER_ID
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Unique identifier for guests who submitted reviews, enabling reviewer analysis and feedback tracking.
+  - name: REVIEWER_NAME
+    column_id: REVIEWS::REVIEWER_NAME
+    properties:
+      column_type: ATTRIBUTE
+      ai_context: Display name of guests who provided reviews, offering personal context for feedback credibility.
+  properties:
+    is_bypass_rls: false
+    join_progressive: true
+    spotter_config:
+      is_spotter_enabled: true

@@ -1,0 +1,564 @@
+guid: 6da8d65e-588a-4c57-a4a7-ee400269a481
+table:
+  name: LISTINGS
+  db: FRANCOIS
+  schema: AIRBNB
+  db_table: LISTINGS
+  connection:
+    name: Airbnb
+    fqn: 10094842-7bbb-463b-88d8-59a5f0af0d33
+  columns:
+  - name: ID
+    db_column_name: ID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: LISTING_URL
+    db_column_name: LISTING_URL
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: SCRAPE_ID
+    db_column_name: SCRAPE_ID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: LAST_SCRAPED
+    db_column_name: LAST_SCRAPED
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: SOURCE
+    db_column_name: SOURCE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: NAME
+    db_column_name: NAME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: DESCRIPTION
+    db_column_name: DESCRIPTION
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: NEIGHBORHOOD_OVERVIEW
+    db_column_name: NEIGHBORHOOD_OVERVIEW
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: PICTURE_URL
+    db_column_name: PICTURE_URL
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_ID
+    db_column_name: HOST_ID
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_URL
+    db_column_name: HOST_URL
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_NAME
+    db_column_name: HOST_NAME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_SINCE
+    db_column_name: HOST_SINCE
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: HOST_LOCATION
+    db_column_name: HOST_LOCATION
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_ABOUT
+    db_column_name: HOST_ABOUT
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_RESPONSE_TIME
+    db_column_name: HOST_RESPONSE_TIME
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_RESPONSE_RATE
+    db_column_name: HOST_RESPONSE_RATE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_ACCEPTANCE_RATE
+    db_column_name: HOST_ACCEPTANCE_RATE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_IS_SUPERHOST
+    db_column_name: HOST_IS_SUPERHOST
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: BOOL
+  - name: HOST_THUMBNAIL_URL
+    db_column_name: HOST_THUMBNAIL_URL
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_PICTURE_URL
+    db_column_name: HOST_PICTURE_URL
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_NEIGHBOURHOOD
+    db_column_name: HOST_NEIGHBOURHOOD
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_LISTINGS_COUNT
+    db_column_name: HOST_LISTINGS_COUNT
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: HOST_TOTAL_LISTINGS_COUNT
+    db_column_name: HOST_TOTAL_LISTINGS_COUNT
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: HOST_VERIFICATIONS
+    db_column_name: HOST_VERIFICATIONS
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HOST_HAS_PROFILE_PIC
+    db_column_name: HOST_HAS_PROFILE_PIC
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: BOOL
+  - name: HOST_IDENTITY_VERIFIED
+    db_column_name: HOST_IDENTITY_VERIFIED
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: BOOL
+  - name: NEIGHBOURHOOD
+    db_column_name: NEIGHBOURHOOD
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: NEIGHBOURHOOD_CLEANSED
+    db_column_name: NEIGHBOURHOOD_CLEANSED
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: NEIGHBOURHOOD_GROUP_CLEANSED
+    db_column_name: NEIGHBOURHOOD_GROUP_CLEANSED
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: LATITUDE
+    db_column_name: LATITUDE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: LONGITUDE
+    db_column_name: LONGITUDE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: PROPERTY_TYPE
+    db_column_name: PROPERTY_TYPE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: ROOM_TYPE
+    db_column_name: ROOM_TYPE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: ACCOMMODATES
+    db_column_name: ACCOMMODATES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: BATHROOMS
+    db_column_name: BATHROOMS
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: BATHROOMS_TEXT
+    db_column_name: BATHROOMS_TEXT
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: BEDROOMS
+    db_column_name: BEDROOMS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: BEDS
+    db_column_name: BEDS
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: AMENITIES
+    db_column_name: AMENITIES
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: PRICE
+    db_column_name: PRICE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: MINIMUM_NIGHTS
+    db_column_name: MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MAXIMUM_NIGHTS
+    db_column_name: MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MINIMUM_MINIMUM_NIGHTS
+    db_column_name: MINIMUM_MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MAXIMUM_MINIMUM_NIGHTS
+    db_column_name: MAXIMUM_MINIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MINIMUM_MAXIMUM_NIGHTS
+    db_column_name: MINIMUM_MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MAXIMUM_MAXIMUM_NIGHTS
+    db_column_name: MAXIMUM_MAXIMUM_NIGHTS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: MINIMUM_NIGHTS_AVG_NTM
+    db_column_name: MINIMUM_NIGHTS_AVG_NTM
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: MAXIMUM_NIGHTS_AVG_NTM
+    db_column_name: MAXIMUM_NIGHTS_AVG_NTM
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: CALENDAR_UPDATED
+    db_column_name: CALENDAR_UPDATED
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: HAS_AVAILABILITY
+    db_column_name: HAS_AVAILABILITY
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: BOOL
+  - name: AVAILABILITY_30
+    db_column_name: AVAILABILITY_30
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: AVAILABILITY_60
+    db_column_name: AVAILABILITY_60
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: AVAILABILITY_90
+    db_column_name: AVAILABILITY_90
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: AVAILABILITY_365
+    db_column_name: AVAILABILITY_365
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: CALENDAR_LAST_SCRAPED
+    db_column_name: CALENDAR_LAST_SCRAPED
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: NUMBER_OF_REVIEWS
+    db_column_name: NUMBER_OF_REVIEWS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: NUMBER_OF_REVIEWS_LTM
+    db_column_name: NUMBER_OF_REVIEWS_LTM
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: NUMBER_OF_REVIEWS_L30D
+    db_column_name: NUMBER_OF_REVIEWS_L30D
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: AVAILABILITY_EOY
+    db_column_name: AVAILABILITY_EOY
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: NUMBER_OF_REVIEWS_LY
+    db_column_name: NUMBER_OF_REVIEWS_LY
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: ESTIMATED_OCCUPANCY_L365D
+    db_column_name: ESTIMATED_OCCUPANCY_L365D
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: ESTIMATED_REVENUE_L365D
+    db_column_name: ESTIMATED_REVENUE_L365D
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: FIRST_REVIEW
+    db_column_name: FIRST_REVIEW
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: LAST_REVIEW
+    db_column_name: LAST_REVIEW
+    properties:
+      column_type: ATTRIBUTE
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DATE
+  - name: REVIEW_SCORES_RATING
+    db_column_name: REVIEW_SCORES_RATING
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REVIEW_SCORES_ACCURACY
+    db_column_name: REVIEW_SCORES_ACCURACY
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REVIEW_SCORES_CLEANLINESS
+    db_column_name: REVIEW_SCORES_CLEANLINESS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REVIEW_SCORES_CHECKIN
+    db_column_name: REVIEW_SCORES_CHECKIN
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REVIEW_SCORES_COMMUNICATION
+    db_column_name: REVIEW_SCORES_COMMUNICATION
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REVIEW_SCORES_LOCATION
+    db_column_name: REVIEW_SCORES_LOCATION
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: REVIEW_SCORES_VALUE
+    db_column_name: REVIEW_SCORES_VALUE
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  - name: LICENSE
+    db_column_name: LICENSE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: VARCHAR
+  - name: INSTANT_BOOKABLE
+    db_column_name: INSTANT_BOOKABLE
+    properties:
+      column_type: ATTRIBUTE
+    db_column_properties:
+      data_type: BOOL
+  - name: CALCULATED_HOST_LISTINGS_COUNT
+    db_column_name: CALCULATED_HOST_LISTINGS_COUNT
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: CALCULATED_HOST_LISTINGS_COUNT_ENTIRE_HOMES
+    db_column_name: CALCULATED_HOST_LISTINGS_COUNT_ENTIRE_HOMES
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: CALCULATED_HOST_LISTINGS_COUNT_PRIVATE_ROOMS
+    db_column_name: CALCULATED_HOST_LISTINGS_COUNT_PRIVATE_ROOMS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: CALCULATED_HOST_LISTINGS_COUNT_SHARED_ROOMS
+    db_column_name: CALCULATED_HOST_LISTINGS_COUNT_SHARED_ROOMS
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: INT64
+  - name: REVIEWS_PER_MONTH
+    db_column_name: REVIEWS_PER_MONTH
+    properties:
+      column_type: MEASURE
+      aggregation: SUM
+      index_type: DONT_INDEX
+    db_column_properties:
+      data_type: DOUBLE
+  properties:
+    spotter_config:
+      is_spotter_enabled: true
