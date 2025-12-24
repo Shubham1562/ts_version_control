@@ -1,0 +1,88 @@
+guid: bcbc5920-51f3-4115-9b3f-435c899651e8
+liveboard:
+  name: new liveboard
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Total ACCOMMODATES by AMENITIES
+      tables:
+      - id: Airbnb
+        name: Airbnb
+        fqn: f19d134f-4e29-4c80-8890-18fd9dd55d36
+      search_query: "[ACCOMMODATES] [AMENITIES]"
+      answer_columns:
+      - name: AMENITIES
+      - name: Total ACCOMMODATES
+      table:
+        table_columns:
+        - column_id: AMENITIES
+          show_headline: false
+        - column_id: Total ACCOMMODATES
+          show_headline: false
+        ordered_column_ids:
+        - AMENITIES
+        - Total ACCOMMODATES
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: AMENITIES
+        - column_id: Total ACCOMMODATES
+        axis_configs:
+        - x:
+          - AMENITIES
+          "y":
+          - Total ACCOMMODATES
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}},\"kpiDisplayProperties\": {\"showDateLabel\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true,\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\"}},\"columnProperties\": [{\"columnId\": \"AMENITIES\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}},{\"columnId\": \"Total ACCOMMODATES\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}},{\"columnId\": \"68a3813e-a032-4a69-b9e6-97283fbc16c7\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}},{\"columnId\": \"c91e7bd5-3810-4eea-8c36-1dfbcef9200e\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}}],\"axisProperties\": [{\"id\": \"cf273f26-ac46-42bf-b2ac-58ee95eef211\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total ACCOMMODATES\"],\"isOpposite\": false}},{\"id\": \"499fe907-c9ad-451f-a033-e10e3363ee45\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"AMENITIES\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total ACCOMMODATES\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 7025915c-dba0-462f-8fca-af1d25166bd6
+  - id: Viz_2
+    answer:
+      name: Total ACCOMMODATES by AMENITIES
+      tables:
+      - id: Airbnb
+        name: Airbnb
+        fqn: f19d134f-4e29-4c80-8890-18fd9dd55d36
+      search_query: "[ACCOMMODATES] [AMENITIES]"
+      answer_columns:
+      - name: AMENITIES
+      - name: Total ACCOMMODATES
+      table:
+        table_columns:
+        - column_id: AMENITIES
+          show_headline: false
+        - column_id: Total ACCOMMODATES
+          show_headline: false
+        ordered_column_ids:
+        - AMENITIES
+        - Total ACCOMMODATES
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: AMENITIES
+        - column_id: Total ACCOMMODATES
+        axis_configs:
+        - x:
+          - AMENITIES
+          "y":
+          - Total ACCOMMODATES
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}},\"kpiDisplayProperties\": {\"showDateLabel\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true,\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\"}},\"columnProperties\": [{\"columnId\": \"AMENITIES\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}},{\"columnId\": \"Total ACCOMMODATES\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}},{\"columnId\": \"81275356-0959-4f83-a6a1-0c7d227181da\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}},{\"columnId\": \"fc61ff21-0c08-4250-b631-257e0be9b494\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true}}}],\"axisProperties\": [{\"id\": \"cf273f26-ac46-42bf-b2ac-58ee95eef211\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total ACCOMMODATES\"],\"isOpposite\": false}},{\"id\": \"499fe907-c9ad-451f-a033-e10e3363ee45\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"AMENITIES\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total ACCOMMODATES\",\"color\": \"#2E75F0\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: f5c0beb1-920c-47e4-a228-6e945c5f7892
+  layout:
+    tiles:
+    - visualization_id: Viz_1
+      x: 0
+      "y": 0
+      height: 8
+      width: 6
+    - visualization_id: Viz_2
+      x: 6
+      "y": 0
+      height: 8
+      width: 6
