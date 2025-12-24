@@ -35,7 +35,7 @@ liveboard:
           "y":
           - Total Discount
         client_state: ""
-        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Brand1\",\"columnProperty\": {}},{\"columnId\": \"Total Discount\",\"columnProperty\": {}},{\"columnId\": \"Measure names\",\"columnProperty\": {}},{\"columnId\": \"Measure values\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"42aed869-2f48-4b7c-85eb-539b6db4784e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Discount\"],\"isOpposite\": false}},{\"id\": \"ca790959-c46b-43e6-b35f-f35043269b08\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Brand1\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Discount\",\"color\": \"#747E8C\"}]}"
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Brand1\",\"columnProperty\": {}},{\"columnId\": \"Total Discount\",\"columnProperty\": {}},{\"columnId\": \"67409a83-509c-4979-b237-883a3a542cb2\",\"columnProperty\": {}},{\"columnId\": \"0062f612-1508-4e07-a6a4-e7fbb5fa47e2\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"42aed869-2f48-4b7c-85eb-539b6db4784e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Discount\"],\"isOpposite\": false}},{\"id\": \"ca790959-c46b-43e6-b35f-f35043269b08\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Brand1\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Discount\",\"color\": \"#747E8C\"}]}"
       display_mode: CHART_MODE
     viz_guid: 58790342-4078-486d-83c2-8e40af2cb87e
   - id: Viz_2
@@ -71,18 +71,18 @@ liveboard:
           "y":
           - Total Discount
         client_state: ""
-        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Brand1\",\"columnProperty\": {}},{\"columnId\": \"Total Discount\",\"columnProperty\": {}},{\"columnId\": \"Measure names\",\"columnProperty\": {}},{\"columnId\": \"Measure values\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"42aed869-2f48-4b7c-85eb-539b6db4784e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Discount\"],\"isOpposite\": false}},{\"id\": \"ca790959-c46b-43e6-b35f-f35043269b08\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Brand1\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Discount\",\"color\": \"#747E8C\"}]}"
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_OFF\",\"chartSpecific\": {\"pivotSummariesState\": {}}},\"columnProperties\": [{\"columnId\": \"Brand1\",\"columnProperty\": {}},{\"columnId\": \"Total Discount\",\"columnProperty\": {}},{\"columnId\": \"f0646c65-fe94-497e-aa70-df2164e247a9\",\"columnProperty\": {}},{\"columnId\": \"bd38b09d-1d77-4101-bb86-207cd57835e6\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"42aed869-2f48-4b7c-85eb-539b6db4784e\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total Discount\"],\"isOpposite\": false}},{\"id\": \"ca790959-c46b-43e6-b35f-f35043269b08\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Brand1\"]}}],\"systemSeriesColors\": [{\"serieName\": \"Total Discount\",\"color\": \"#747E8C\"}]}"
       display_mode: CHART_MODE
     viz_guid: f686041a-1ef4-4e27-a589-5a4e1ec510d1
   layout:
     tiles:
     - visualization_id: Viz_1
       x: 0
-      "y": 8
+      "y": 0
       height: 8
       width: 6
     - visualization_id: Viz_2
-      x: 0
+      x: 6
       "y": 0
       height: 8
       width: 6
